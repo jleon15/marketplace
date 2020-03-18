@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Marketplace</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="outer-container">
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <h1 class="header-title">Telescoped Marketplace</h1>
+    </nav>
+    <div class="container d-flex justify-content-center inner-container">
+        <div class="panel panel-default col-md-8 align-self-center error-box">
+            <div>
+                <h1 class="error-message-element">OOPS! Something went wrong...</h1>
+                <h4 class="error-message-element">Please try again or contact Telescope.</h4>
+                <a class="btn btn-error error-message-element" th:href="@{/viewItemsForSale/0}">Keep shopping</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

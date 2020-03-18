@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sell item</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="outer-container">
+    <header th:insert="fragments/navbar.html :: navbar"></header>
+    <div class="container d-flex justify-content-center inner-container">
+        <div class="panel panel-default col-md-6 align-self-center login-box">
+            <div class="panel-heading">
+                <h2 class="panel-title">Sell item</h2>
+            </div>
+            <div class="panel-body">
+                <form action="#" th:action="@{/api/marketplace/sellItem}" method="POST">
+                    <div class="form-group">
+                        <div th:if="${param.error}">
+                            <div class="alert alert-danger">Please provide a valid name, cost and image URL.</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Item's name</label>
+                        <input type="text" class="form-control" placeholder="Item name" id="name" th:name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="cost">Item's cost</label>
+                        <input type="text" class="form-control" placeholder="Item cost" id="cost" th:name="cost">
+                    </div>
+                    <div class="form-group">
+                        <label for="cost">Item's image URL</label>
+                        <input type="text" class="form-control" placeholder="Item image" id="image" th:name="image">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Item's description</label>
+                        <textarea rows="3" class="form-control" placeholder="Item description" id="description"
+                                  th:name="description"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary login-btn">Sell</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <footer th:insert="fragments/navbar.html :: navbar"></footer>
+</div>
+</body>
+</html>

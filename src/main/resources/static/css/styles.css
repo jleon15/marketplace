@@ -1,0 +1,103 @@
+.header-title {
+    color: white;
+}
+
+html, body {
+    height: 100%;
+}
+
+.outer-container {
+    display: flex;
+    height: 100%;
+    flex-flow: column;
+}
+
+.inner-container {
+    flex-grow: 1;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.login-box {
+    border: 1px ridge slategrey;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.login-btn {
+    width: 100%;
+}
+
+.btn-primary {
+    border-radius: 5px;
+}
+
+.item-image {
+    width: 30%;
+}
+
+img {
+    width:80px;
+    height:80px;
+    object-fit:scale-down;
+}
+
+.item {
+    display: inline-block;
+    border-color: darkgrey;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.2);
+    padding: 10px;
+}
+
+.item:hover {
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+}
+
+.item-text {
+    font-size: medium;
+}
+
+.catalog {
+    width: 100%;
+    padding: 5%;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+.sell-item-btn {
+    margin-top: 30px;
+}
+
+.center-text-title {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.logout-btn {
+    margin-right: 50px;
+}
+
+.error-box {
+    padding: 60px;
+    border-radius: 20px;
+    background-color: darkslategrey;
+}
+
+.error-message-element {
+    margin-top: 20px;
+    color: white;
+}
+
+.btn-error {
+    border-radius: 5px;
+    background-color: white;
+    color: darkslategrey;
+}
+
+.items-form {
+    
+}

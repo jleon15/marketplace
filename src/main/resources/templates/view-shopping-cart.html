@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sell item</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="outer-container">
+    <header th:insert="fragments/navbar.html :: navbar"></header>
+    <div class="container inner-container">
+        <h2 class="center-text-title">Shopping cart items <span th:text="'(' + ${totalItems} + ')'"></span></h2>
+        <div class="row catalog">
+            <div class="col-sm-4 item" th:each="item: ${items}">
+                <h5 th:text="${item.name}"></h5>
+                <div class="item-text"><strong>Cost:</strong> <span th:text="${item.cost}"></span></div>
+                <div class="item-text"><strong>Provided by:</strong> <span th:text="${item.provider}"></span></div>
+                <div class="item-text"><strong>Description:</strong> <span th:text="${item.description}"></span></div>
+                <div class="item-image col-12"><img th:src="${item.image}" alt="Image not available"></div>
+                <form th:action="@{'/api/marketplace/removeItemFromCart/' + ${item.id}}" method="POST" class="align-bottom">
+                    <button type="submit" class="btn btn-danger add-to-cart-btn">Remove from cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <nav class="justify-content-center" th:if="${totalPages > 1}">
+                <ul class="pagination">
+                    <li class="page-item" th:if="${!isFirst && currentPage - 2 >= 0}">
+                        <a class="page-link" th:href="@{'/viewShoppingCartItems/' + ${currentPage - 2}}">Previous</a>
+                    </li>
+                    <li class="page-item" th:if="${currentPage - 1 >= 0}">
+                        <a class="page-link" th:href="@{'/viewShoppingCartItems/' + ${currentPage - 1}}"
+                           th:text="${currentPage - 1}"></a>
+                    </li>
+                    <li class="page-item active">
+                        <a class="page-link" th:href="@{'/viewShoppingCartItems/' + ${currentPage}}"
+                           th:text="${currentPage}"></a>
+                    </li>
+                    <li class="page-item" th:if="${currentPage + 1 < totalPages}">
+                        <a class="page-link" th:href="@{'/viewShoppingCartItems/' + ${currentPage + 1}}"
+                           th:text="${currentPage + 1}"></a>
+                    </li>
+                    <li class="page-item" th:if="${!isLast && currentPage + 2 < totalPages}">
+                        <a class="page-link" th:href="@{'/viewShoppingCartItems/' + ${currentPage + 2}}">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <footer th:insert="fragments/navbar.html :: navbar"></footer>
+</div>
+</body>
+</html>
