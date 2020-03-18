@@ -37,7 +37,7 @@ There are some aspects that can be improved for this project. I didn't do them b
  For the first time, once the database schema is created and the application is already running, you can seed some 
  users into the database running the following SQL statement:
  
- INSER INTO `users` VALUES
+ INSERT INTO `users` VALUES
  ('1', 'user1fn', 'user1ln', '$2y$12$3IW8qr5Ghtam9qmoWXboeOft4G8yiDMUFW/iakcFJL8Pc.BbkwDeC' , 'user1'),
  ('2', 'user2fn', 'user2ln', '$2y$12$3IW8qr5Ghtam9qmoWXboeOft4G8yiDMUFW/iakcFJL8Pc.BbkwDeC' , 'user2'),
  ('3', 'user3fn', 'user3ln', '$2y$12$3IW8qr5Ghtam9qmoWXboeOft4G8yiDMUFW/iakcFJL8Pc.BbkwDeC' , 'user3');
