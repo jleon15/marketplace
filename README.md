@@ -26,7 +26,7 @@ There are some aspects that can be improved for this project. I didn't do them b
  
  
  ##### Running the application:
- To run the application a gradle build must be executed followed by executing the app using the following commands:
+ To run the application a gradle build must be executed followed by executing the app using the following commands from the projects directory:
  
  1. ./gradlew build
  2. ./gradlew bootRun
